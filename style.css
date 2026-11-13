@@ -1,0 +1,6 @@
+/* Shared MealMate styling. Page-specific inline styles remain intact. */
+:root{--mm-pink:#d63384;--mm-dark:#4a1834;--mm-light:#fff0f6;--mm-text:#4a1834}
+body{font-family:Arial,sans-serif;color:var(--mm-text)}
+.btn-mealmate{background:var(--mm-pink);color:#fff;border:0;border-radius:9px}
+.btn-mealmate:hover{background:#b0256b;color:#fff}
+.mealmate-card{border:0;border-radius:18px;box-shadow:0 5px 18px rgba(0,0,0,.1)}

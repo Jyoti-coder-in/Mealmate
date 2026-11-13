@@ -1,0 +1,21 @@
+MEALMATE UPDATE - ORIGINAL PROJECT BASE
+
+This ZIP was rebuilt from the original Mealmate.zip. Existing files/design/assets were retained, with requested additions.
+
+INSTALL:
+1. Back up your existing Mealmate folder and mealmate_db database.
+2. Extract this ZIP and copy its Mealmate folder into C:\xampp\htdocs\ (replace after backup).
+3. In phpMyAdmin select mealmate_db and import database/vendor_order_tracking_migration.sql. Run once. If vendor_id or restaurant_id already exists in foods, skip that ALTER line.
+4. Existing DB connection settings remain unchanged (MySQL port 3307).
+5. Open http://localhost/Mealmate/
+
+VENDOR FLOW:
+Admin Dashboard > Manage Food, Vendors & Discounts > Create Vendor Account.
+Vendor login: http://localhost/Mealmate/vendor/login.php
+Vendor dashboard: manage own food items and orders containing own food.
+
+STUDENT TRACKING: Student Panel > My Orders. Order status progress uses the existing orders.order_status column.
+
+BANNER: Home page and student dashboard keep the 50% OFF banner; student Food Menu/Exploring page no longer shows the banner.
+
+NOTE: Vendor order status updates the overall order status (not a separate per-vendor shipment status). Existing food rows have vendor_id NULL until assigned to a vendor.

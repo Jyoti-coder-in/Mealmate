@@ -1,0 +1,13 @@
+MEALMATE STUDENT VERIFICATION + VENDOR LISTING SETUP
+
+1) Back up your mealmate_db database first.
+2) Open XAMPP/phpMyAdmin and select mealmate_db.
+3) Import database/student_verification_migration.sql ONCE. If it says a column already exists, do not rerun the same ALTER; inspect the users table and add only missing columns.
+4) If vendor login/tables are not set up yet, import database/vendor_order_tracking_migration.sql. It creates vendors and adds foods.vendor_id/restaurant_id. If those columns already exist, skip the ALTER statements.
+5) Ensure the PHP process can write to uploads/college_ids and uploads/foods. Keep uploaded student ID files private; the included .htaccess blocks direct access and admins view them through admin/view_student_id.php.
+6) Log in as a student, upload a JPG/PNG/WEBP/PDF College ID (max 5 MB). Admin > Student College ID Reviews > View uploaded ID > Approve/Reject.
+7) STUDENT50 is accepted only when verification_status is Approved.
+8) Admin creates vendor accounts in Admin > Manage Food, Vendors & Discounts. Vendor logs in at /vendor/login.php and adds food name, category, price, description and image under Manage Food Items.
+9) Test on local XAMPP before uploading to hosting. Update database credentials and port for the hosting environment.
+
+Banner placement: main homepage and student login only. Student dashboard has the College ID upload and status panel, but no promotional banner.
